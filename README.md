@@ -14,7 +14,8 @@ the price history.
   plus games featured on SteamCozy.
 - **Cadence**: 06:17 and 18:17 UTC daily (tracking began 2026-07-11).
 - **Format**: `data/<YYYY-MM>/<YYYY-MM-DD_HHMM>.csv` with
-  `appid,currency,initial,final,discount_pct,is_free` — prices in US cents (`cc=us`).
+  `appid,cc,currency,initial,final,discount_pct,is_free` — minor units per region currency.
+  Regions sampled: us, de, gb, au, ca, jp, br, cn (files before 2026-07-11 12:00 UTC are us-only, 6 columns).
 
 ## Honest-data notes
 
