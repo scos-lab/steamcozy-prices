@@ -1,6 +1,6 @@
 # steamcozy-prices
 
-Daily Steam price samples for ~5,000 games, collected for
+Daily Steam price samples for ~8,000 games, collected for
 [SteamCozy](https://steamcozy.com) — a game knowledge & discovery site.
 
 ## What this is
@@ -11,7 +11,7 @@ storefront API twice a day and commits one CSV per run. The git history *is*
 the price history.
 
 - **Coverage**: `watchlist.json` — top ~5,000 Steam games by review count,
-  plus games featured on SteamCozy.
+  plus every game with a detail page on SteamCozy (8,206 apps as of 2026-07-25).
 - **Cadence**: 06:17 and 18:17 UTC daily (tracking began 2026-07-11).
 - **Format**: `data/<YYYY-MM>/<YYYY-MM-DD_HHMM>.csv` with
   `appid,cc,currency,initial,final,discount_pct,is_free` — minor units per region currency.
