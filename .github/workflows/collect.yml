@@ -11,7 +11,12 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    # 2026-08-12 由 50 提到 90: 名单从 8,206 扩到 13,940 (wuko 批准, 补上详情页里
+    # 缺价格图的那 49%)。实测模型 8,206 款 = 21min(三轮实测 21m12s/22m01s/21m36s),
+    # 外推 13,940 款 ≈ 35min → 50min 只剩 30% 余量, Steam 慢一点就整轮 SIGTERM 而
+    # 当天价格全丢。⚠ 名单现在由本机日更链每天重生成并 push, **会随详情页扩容继续涨**,
+    # 扩页后回来重算这个值 (公开仓库 Actions 分钟免费, 提高它不花钱)。
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - name: Sample prices
